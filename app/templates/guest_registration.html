@@ -1,0 +1,77 @@
+<!-- prajal mishra 1001434611 -->
+
+{% extends "base.html" %}
+{% block title %}Guest Registration{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h2>Prajal Mishra : 1001434611</h2>
+  <h2>MY MAV : Welcome!</h2>
+ <!--  <form action="/register" method="POST"> -->
+  <!-- 
+    <div class="form-group">
+	    <label for="namefield">Enter username</label>
+	    <input type="text" class="form-control" id="namefield" name="name" aria-describedby="emailHelp" placeholder="State">
+	    <small id="emailHelp" class="form-text text-muted">Give a state name here</small>
+	</div> -->
+  	<!-- <button type="submit" class="btn btn-default">Search</button>
+  </form>
+  <br><br>
+
+  <form action="/modify" method="POST"> -->
+  <!-- <div class="form-group">
+    <label for="namefield">Enter Username</label>
+    <input type="text" class="form-control" id="namefield" name="old" aria-describedby="emailHelp" placeholder="Username">
+    <label for="namefield">Enter Password</label>
+    <input type="text" class="form-control" id="namefield" name="zip" aria-describedby="emailHelp" placeholder="Password">
+    <small id="emailHelp" class="form-text text-muted">SAT range</small>
+  </div>
+    <button type="submit" class="btn btn-default">Login</button>
+
+  </form>
+
+  <br><br> -->
+<!-- 
+  <form action="/delete" method="POST">
+
+  	<div class="form-group">
+    <label for="namefield">Delete the row with zipcode as</label>
+    <input type="text" class="form-control" id="namefield" name="old" aria-describedby="emailHelp" placeholder="Zip">
+    <small id="emailHelp" class="form-text text-muted">Enter the zipcode of the tuple to be deleted</small>
+
+  </div>
+    <button type="submit" class="btn btn-default">Delete</button>  
+  
+  
+  </form>
+ -->
+ <table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Course Number</th>
+    <th></th>
+    <th>Student Name</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for r in result_set %}
+    <tr>
+    <td>{{ r.coursenumber }}</td>
+    <td>{{ r.sectionnumber }}</td>
+    <td>{{ r.studentname }}</td>
+    <td>{{ r.state }}</td>
+    </tr>
+  {% endfor %}
+</table>
+  <p class="navbar-btn">
+  <a href="/barchart" class="btn btn-default">Show Bar Chart</a>
+</p>
+<p class="navbar-btn">
+  <a href="/linechart" class="btn btn-default">List all</a>
+</p>
+<!-- <p class="navbar-btn">
+  <a href="/piechart" class="btn btn-default">Show Pie Chart</a>
+</p> -->
+{% endblock %}

@@ -1,0 +1,69 @@
+<!-- prajal mishra -->
+{% extends "base.html" %}
+{% block title %}Registered Guests{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h2>Prajal Mishra</h2>
+  <h2>My Mav</h2>
+  <table class="table table-striped">
+  <thead>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for r in result_set %}
+    <tr>
+    <td>{{ r.total }}</td>
+    <td>{{ r.totalvote }}</td>
+    <td>{{ r.sat_avg }}</td>
+    <td>{{ r.state }}</td>
+    </tr>
+  {% endfor %}
+</table>
+<form action="/register" method="POST">
+  <!-- 
+    <div class="form-group">
+      <label for="namefield">Enter username</label>
+      <input type="text" class="form-control" id="namefield" name="name" aria-describedby="emailHelp" placeholder="State">
+      <small id="emailHelp" class="form-text text-muted">Give a state name here</small>
+  </div> -->
+    <!-- <button type="submit" class="btn btn-default">Search</button>
+  </form>
+  <br><br>
+
+  <form action="/modify" method="POST"> -->
+  <div class="form-group">
+    <label for="namefield">Course Number</label>
+    <input type="text" class="form-control" id="namefield" name="old" aria-describedby="emailHelp" placeholder="coursenumber">
+  <!--   <label for="namefield">Section Number</label>
+    <input type="text" class="form-control" id="namefield" name="zip" aria-describedby="emailHelp" placeholder="Section">
+    <small id="emailHelp" class="form-text text-muted">SAT range</small>
+    <label for="namefield">Your name</label>
+    <input type="text" class="form-control" id="namefield" name="newname" aria-describedby="emailHelp" placeholder="name">
+   -->  
+  </div>
+    <button type="submit" class="btn btn-default">Add to Class</button>
+
+  </form>
+
+  <form action="/modify" method="POST">
+  
+    <button type="submit" class="btn btn-default">Login</button>
+
+  </form>
+<div>
+{{string1}}
+<br><br>
+<p> T: {{timelapsed}} Second(s) </p>
+</div>
+<p class="navbar-btn">
+  <a href="/register" class="btn btn-default">Home</a>
+</p>
+
+{% endblock %}

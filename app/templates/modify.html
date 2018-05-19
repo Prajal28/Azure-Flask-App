@@ -1,0 +1,79 @@
+<!-- prajal mishra 1001434611 -->
+{% extends "base.html" %}
+{% block title %}Registered Students{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h2>Prajal Mishra : 1001434611</h2>
+  <h2>My Mav</h2>
+  <table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Given Name</th>
+    <th>Surname</th>
+    <th>Address</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for r in result_set2 %}
+    <tr>
+    <td>{{ r.givenname }}</td>
+    <td>{{ r.surname }}</td>
+    <td>{{ r.streetadress }}</td>
+    <td>{{ r.state }}</td>
+    </tr>
+  {% endfor %}
+</table>
+<form action="/modify" method="POST">
+  <!-- 
+    <div class="form-group">
+      <label for="namefield">Enter username</label>
+      <input type="text" class="form-control" id="namefield" name="name" aria-describedby="emailHelp" placeholder="State">
+      <small id="emailHelp" class="form-text text-muted">Give a state name here</small>
+  </div> -->
+    <!-- <button type="submit" class="btn btn-default">Search</button>
+  </form>
+  <br><br>
+
+  <form action="/modify" method="POST"> -->
+  <div class="form-group">
+    <label for="namefield">User Name</label>
+    <input type="text" class="form-control" id="namefield" name="old" aria-describedby="emailHelp" placeholder="coursenumber">
+    <label for="namefield">Password</label>
+    <input type="text" class="form-control" id="namefield" name="zip" aria-describedby="emailHelp" placeholder="Section">
+    
+  </div>
+    <button type="submit" class="btn btn-default">Login</button>
+
+  </form>
+
+<form action="/register" method="POST">
+  <!-- 
+    <div class="form-group">
+      <label for="namefield">Enter username</label>
+      <input type="text" class="form-control" id="namefield" name="name" aria-describedby="emailHelp" placeholder="State">
+      <small id="emailHelp" class="form-text text-muted">Give a state name here</small>
+  </div> -->
+    <!-- <button type="submit" class="btn btn-default">Search</button>
+  </form>
+  <br><br>
+
+  <form action="/modify" method="POST"> -->
+  
+    <button type="submit" class="btn btn-default">Login</button>
+
+  </form>
+
+
+<div>
+{{string1}}
+<br><br>
+<p> T: {{timelapsed}} Second(s) </p>
+</div>
+<p class="navbar-btn">
+  <a href="/register" class="btn btn-default">Home</a>
+</p>
+
+{% endblock %}
